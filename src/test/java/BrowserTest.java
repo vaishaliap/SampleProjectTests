@@ -27,7 +27,7 @@ public class BrowserTest {
 
             WebDriverManager.firefoxdriver().setup();
                 FirefoxOptions ffOptions = new FirefoxOptions();
-                ffOptions.addArguments("-headless");
+                //ffOptions.addArguments("-headless");
             driver = new FirefoxDriver(ffOptions);
             //ChromeOptions chOptions = new ChromeOptions();
             //chOptions.addArguments("--headless");
