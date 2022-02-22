@@ -3,7 +3,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -25,8 +24,10 @@ public class BrowserTest {
             WebDriverManager.chromedriver().setup();
             //WebDriverManager.firefoxdriver().setup();
             //driver = new FirefoxDriver();
-			ChromeOptions chopts = new ChromeOptions().setHeadless(true);
-            driver = new ChromeDriver(chopts);
+            ChromeOptions chOptions = new ChromeOptions();
+            chOptions.addArguments("--headless");
+            driver = new ChromeDriver(chOptions);
+
             driver.get("http://google.com");
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
             String title = driver.getTitle();
@@ -36,7 +37,7 @@ public class BrowserTest {
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-        driver.findElement(By.name("q")).sendKeys("Testing Browser");
+            driver.findElement(By.name("q")).sendKeys("Testing Browser");
 
                         try {
                             Thread.sleep(20000);
