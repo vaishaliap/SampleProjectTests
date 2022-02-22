@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.time.Duration;
 
 public class BrowserTest {
 
@@ -27,10 +28,15 @@ public class BrowserTest {
 			ChromeOptions chopts = new ChromeOptions().setHeadless(true);
             driver = new ChromeDriver(chopts);
             driver.get("http://google.com");
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
             String title = driver.getTitle();
             System.out.println("################ Browser Opened Page Title:"+title);
-
-            driver.findElement(By.name("q")).sendKeys("Testing Browser");
+                        try {
+                            Thread.sleep(10000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+        driver.findElement(By.name("q")).sendKeys("Testing Browser");
 
                         try {
                             Thread.sleep(20000);
