@@ -36,6 +36,11 @@ public class BrowserTest {
             driver.manage().window().maximize();
             driver.get("http://google.com");
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+                    try {
+                        Thread.sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
             String title = driver.getTitle();
             System.out.println("################ Browser Opened Page Title:"+title);
                         try {
