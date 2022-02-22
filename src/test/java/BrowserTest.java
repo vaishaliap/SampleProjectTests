@@ -2,6 +2,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -23,7 +24,8 @@ public class BrowserTest {
             WebDriverManager.chromedriver().setup();
             //WebDriverManager.firefoxdriver().setup();
             //driver = new FirefoxDriver();
-            driver = new ChromeDriver();
+			ChromeOptions chopts = new ChromeOptions().setHeadless(true);
+            driver = new ChromeDriver(chopts);
             driver.get("http://google.com");
             String title = driver.getTitle();
             System.out.println("################ Browser Opened Page Title:"+title);
