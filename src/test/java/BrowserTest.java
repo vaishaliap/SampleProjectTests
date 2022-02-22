@@ -29,6 +29,7 @@ public class BrowserTest {
             //chOptions.addArguments("--headless");
             //driver = new ChromeDriver(chOptions);
 
+            driver.manage().window().maximize();
             driver.get("http://google.com");
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
             String title = driver.getTitle();
