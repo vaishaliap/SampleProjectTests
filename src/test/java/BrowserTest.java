@@ -39,7 +39,7 @@ public class BrowserTest {
                 ChromeOptions chOptions = new ChromeOptions();
                 //chOptions.addArguments("--headless");
                 driver = new ChromeDriver(chOptions);
-            }else if(browser.equalsIgnoreCase("internetexplorer")){
+            }else if(browser.equalsIgnoreCase("internetexplorer")||browser.contains("explore")){
                 WebDriverManager.iedriver().setup();
                 InternetExplorerOptions ieOptions = new InternetExplorerOptions();
                 //ieOptions.addCommandSwitches("--headless");
