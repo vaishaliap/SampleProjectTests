@@ -52,7 +52,7 @@ public class BrowserTest {
             }
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             driver.manage().window().maximize();
-            driver.get("http://google.com");
+            driver.get("https://academicpartnerships--qat.my.salesforce.com");
             driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
                     try {
                         Thread.sleep(10000);
